@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('images/foodie.jpg');
+    background-color: red;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    backdrop-filter: blur(4px);
+  }
+  
+  header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .header-content h1 {
+    margin: 0;
+    font-size: 2.5em;
+  }
+  
+  nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  main {
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  #restaurant-list {
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .restaurant {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+  
+  .restaurant img {
+    width: 200px;
+    object-fit: cover;
+  }
+  
+  .restaurant-info {
+    padding: 20px;
+  }
+  
+  .restaurant-info h3 {
+    margin-top: 0;
+    font-size: 1.8em;
+    color: #ffcc00;
+  }
+  
+  button.order-btn {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button.order-btn:hover {
+    background-color: #e5533c;
+  }
+  
+  #order-form-section {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  form input {
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  

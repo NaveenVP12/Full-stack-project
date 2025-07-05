@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zomato Clone</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Zomato Clone</h1>
+      <nav>
+        <a href="#" onclick="showSection('restaurant-list')">Home</a>
+        <a href="#" onclick="showSection('cart-section')">Cart</a>
+        <a href="#" onclick="showSection('history-section')">History</a>
+        <a href="#" onclick="showSection('login-section')">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Restaurant List -->
+    <section id="restaurant-list">
+      <h2>Our Top Restaurants</h2>
+      
+      <div class="restaurant">
+        <img src="images/pizza.jpg" alt="Pizza Place">
+        <div class="restaurant-info">
+          <h3>Pizza Place</h3>
+          <p><strong>Item:</strong> Margherita Pizza</p>
+          <p><strong>Cuisine:</strong> Italian</p>
+          <p><strong>Price:</strong> 100$</p>
+          <button class="cart-btn" data-id="1" data-name="Margherita Pizza">Add to Cart</button>
+          <button class="order-btn" onclick="orderNow('Margherita Pizza')">Order Now</button>
+        </div>
+      </div>
+
+      <div class="restaurant">
+        <img src="images/burger.jpg" alt="Burger King">
+        <div class="restaurant-info">
+          <h3>Burger King</h3>
+          <p><strong>Item:</strong> Cheeseburger</p>
+          <p><strong>Cuisine:</strong> Fast Food</p>
+          <p><strong>Price:</strong> 50$</p>
+          <button class="cart-btn" data-id="2" data-name="Cheeseburger">Add to Cart</button>
+          <button class="order-btn" onclick="orderNow('Cheeseburger')">Order Now</button>
+        </div>
+      </div>
+
+      
+  <div class="restaurant">
+    <img src="images/tacos.jpg" alt="Taco Town">
+    <div class="restaurant-info">
+      <h3>Taco Town</h3>
+      <p><strong>Item:</strong> Beef Tacos</p>
+      <p><strong>Cuisine:</strong> Mexican</p>
+      <p><strong>Price:</strong>80$ </p>
+      <button class="cart-btn" data-id="3" data-name="Beef Tacos">Add to Cart</button>
+      <button class="order-btn" onclick="orderNow('Beef Tacos')">Order Now</button>
+    </div>
+  </div>
+
+  <div class="restaurant">
+    <img src="images/hakka.jpg" alt="Noodle House">
+    <div class="restaurant-info">
+      <h3>Noodle House</h3>
+      <p><strong>Item:</strong> Hakka Noodles</p>
+      <p><strong>Cuisine:</strong> Chinese</p>
+      <p><strong>Price:</strong> 70$</p>
+      <button class="cart-btn" data-id=""4 data-name="Hakka Noodles">Add to Cart</button>
+      <button class="order-btn" onclick="orderNow('Hakka Noodles')">Order Now</button>
+    </div>
+  </div>
+
+  <div class="restaurant">
+    <img src="images/butter.jpg" alt="Spice India">
+    <div class="restaurant-info">
+      <h3>Spice India</h3>
+      <p><strong>Item:</strong> Butter Chicken</p>
+      <p><strong>Cuisine:</strong> Indian</p>
+      <p><strong>Price:</strong> 90$</p>
+      <button class="cart-btn" data-id="5" data-name="Butter Chicken">Add to Cart</button>
+      <button class="order-btn" onclick="orderNow('Butter Chicken')">Order Now</button>
+    </div>
+  </div>
+
+  <div class="restaurant">
+    <img src="images/vegan.jpg" alt="Green Bowl">
+    <div class="restaurant-info">
+      <h3>Green Bowl</h3>
+      <p><strong>Item:</strong> Vegan Buddha Bowl</p>
+      <p><strong>Cuisine:</strong> Healthy/Vegan</p>
+      <p><strong>Price:</strong> $</p>
+      <button class="cart-btn" data-id="6" data-name="Vegan Buddha Bowl">Add to Cart</button>
+      <button class="order-btn" onclick="orderNow('Vegan Buddha Bowl')">Order Now</button>
+    </section>
+
+    <!-- Cart Section -->
+    <section id="cart-section" style="display: none;">
+      <h2>Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <button onclick="placeOrder()">Place Order</button>
+      <button onclick="cancelOrder()">cancel Order</button>
+
+
+      <div id="order-confirmation" style="display: none;">
+        <p>✅ Order Placed! Order ID: <span id="order-id"></span></p>
+        <button id="cancel-order-btn">Cancel Order (1 min)</button>
+        <p id="cancel-msg" style="color: red;"></p>
+      </div>
+
+
+    </section>
+
+    <!-- Login/Signup Section -->
+    <section id="login-section" style="display: none;">
+      <h2>Login / Sign Up</h2>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>
+    </section>
+
+    <!-- Order History Section -->
+    <section id="history-section" style="display: none;">
+      <h2>Order History</h2>
+      <div>
+        <button onclick="filterOrders('Placed')">Placed Orders</button>
+        <button onclick="filterOrders('Cancelled')">Cancelled Orders</button>
+      </div>
+      
+      <div id="order-history"></div>
+      
+    </section>
+    <!-- Payment Section -->
+<section id="payment-section" style="display: none;">
+  <h2>Choose Payment Method</h2>
+  <form id="payment-form">
+    <label>
+      <input type="radio" name="payment-method" value="Cash on Delivery" checked />
+      Cash on Delivery
+    </label><br />
+    <label>
+      <input type="radio" name="payment-method" value="Card" />
+      Credit/Debit Card
+    </label><br />
+    <div id="card-details" style="display: none;">
+      <input type="text" placeholder="Card Number" required />
+      <input type="text" placeholder="Expiry Date (MM/YY)" required />
+      <input type="text" placeholder="CVV" required />
+    </div>
+    <button type="submit">Confirm Payment & Place Order</button>
+  </form>
+</section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Zomato Clone</p>
+  </footer>
+
+  <script src="script1.js"></script>
+</body>
+</html>

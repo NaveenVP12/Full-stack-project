@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zomato Clone</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Zomato Clone</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Order</a>
+        <a href="#">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="restaurant-list">
+      <h2>Our Top Restaurants</h2>
+      
+      <div class="restaurant">
+        <img src="images/pizza.jpg" alt="Pizza Place">
+        <div class="restaurant-info">
+          <h3>Pizza Place</h3>
+          <p><strong>Item:</strong> Margherita Pizza</p>
+          <p><strong>Cuisine:</strong> Italian</p>
+          <p><strong>Price:</strong> $$</p>
+          <button class="order-btn" data-id="1">Order Now</button>
+        </div>
+      </div>
+
+      <div class="restaurant">
+        <img src="images/burger.jpg" alt="Burger King">
+        <div class="restaurant-info">
+          <h3>Burger King</h3>
+          <p><strong>Item:</strong> Cheeseburger</p>
+          <p><strong>Cuisine:</strong> Fast Food</p>
+          <p><strong>Price:</strong> $</p>
+          <button class="order-btn" data-id="2">Order Now</button>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="order-form-section" style="display: none;">
+      <h2>Order Form</h2>
+      <form id="order-form">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required />
+        <button type="submit">Place Order</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Zomato Clone</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
